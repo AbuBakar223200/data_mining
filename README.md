@@ -92,7 +92,7 @@
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/AbuBakar223200/data_mining.git
-   cd ML_PAPER_REVIEW
+   cd data_mining
    ```
 
 2. **Install dependencies:**
@@ -469,8 +469,8 @@ Auto-generated executive summary with:
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/ML_PAPER_REVIEW.git
-cd ML_PAPER_REVIEW
+git clone https://github.com/yourusername/data_mining.git
+cd data_mining
 
 # Create virtual environment
 python -m venv venv
@@ -522,7 +522,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use this codebase in your research, please cite:
 
 ```bibtex
-@misc{ml_paper_review_2024,
+@misc{data_mining_2024,
   title={Handling Class Imbalance in UNSW-NB15: A Reproducible Baseline},
   author={Morol, Emon and Contributors},
   year={2024},
