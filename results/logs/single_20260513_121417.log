@@ -1,0 +1,53 @@
+2026-05-13 12:14:17,507 | INFO     | __main__ | Preparing data for task: binary
+2026-05-13 12:14:17,508 | INFO     | src.data.loader | Dataset files validated successfully
+2026-05-13 12:14:17,509 | INFO     | src.data.loader | Loading training data from dataset\UNSW_NB15_training-set.csv
+2026-05-13 12:14:18,504 | INFO     | src.data.loader | Loaded 175,341 training samples with 45 columns
+2026-05-13 12:14:18,699 | INFO     | src.data.loader | Training Set schema validated successfully (all required columns present).
+2026-05-13 12:14:18,699 | INFO     | src.data.loader | Loading test data from dataset\UNSW_NB15_testing-set.csv
+2026-05-13 12:14:19,230 | INFO     | src.data.loader | Loaded 82,332 test samples with 45 columns
+2026-05-13 12:14:19,232 | INFO     | src.data.loader | Test Set schema validated successfully (all required columns present).
+2026-05-13 12:14:19,232 | INFO     | src.data.preprocessing | ============================================================
+2026-05-13 12:14:19,233 | INFO     | src.data.preprocessing | Starting preprocessing pipeline
+2026-05-13 12:14:19,233 | INFO     | src.data.preprocessing | ============================================================
+2026-05-13 12:14:19,234 | INFO     | src.data.preprocessing | Identified 39 numerical features
+2026-05-13 12:14:19,234 | INFO     | src.data.preprocessing | Identified 3 categorical features
+2026-05-13 12:14:19,235 | INFO     | src.data.preprocessing | Creating 80%/20% train/val split
+2026-05-13 12:14:19,543 | INFO     | src.data.preprocessing | Training samples: 140,272
+2026-05-13 12:14:19,543 | INFO     | src.data.preprocessing | Validation samples: 35,069
+2026-05-13 12:14:19,543 | INFO     | src.data.preprocessing | Test samples: 82,332
+2026-05-13 12:14:19,605 | INFO     | src.data.preprocessing | Label mapping: {np.str_('Analysis'): 0, np.str_('Backdoor'): 1, np.str_('DoS'): 2, np.str_('Exploits'): 3, np.str_('Fuzzers'): 4, np.str_('Generic'): 5, np.str_('Normal'): 6, np.str_('Reconnaissance'): 7, np.str_('Shellcode'): 8, np.str_('Worms'): 9}
+2026-05-13 12:14:19,671 | INFO     | src.data.preprocessing | Fitting preprocessor on training data...
+2026-05-13 12:14:20,783 | INFO     | src.data.preprocessing | Transforming validation and test data...
+2026-05-13 12:14:21,164 | INFO     | src.data.preprocessing | Extracted 194 feature names
+2026-05-13 12:14:21,164 | INFO     | src.data.preprocessing | ----------------------------------------
+2026-05-13 12:14:21,165 | INFO     | src.data.preprocessing | Preprocessing complete!
+2026-05-13 12:14:21,165 | INFO     | src.data.preprocessing | X_train shape: (140272, 194)
+2026-05-13 12:14:21,166 | INFO     | src.data.preprocessing | X_val shape: (35069, 194)
+2026-05-13 12:14:21,166 | INFO     | src.data.preprocessing | X_test shape: (82332, 194)
+2026-05-13 12:14:21,167 | INFO     | src.data.preprocessing | Total features: 194
+2026-05-13 12:14:21,232 | INFO     | src.data.preprocessing | [OK] Data leakage validation passed
+2026-05-13 12:14:21,253 | INFO     | __main__ | Starting Single Experiment: Task=binary, Model=lr, Strategy=s0
+2026-05-13 12:14:21,254 | INFO     | main | ============================================================
+2026-05-13 12:14:21,254 | INFO     | main | EXPERIMENT: binary_lr_s0_single (Seed: 42)
+2026-05-13 12:14:21,254 | INFO     | main |   Task:     binary
+2026-05-13 12:14:21,255 | INFO     | main |   Model:    LR
+2026-05-13 12:14:21,255 | INFO     | main |   Strategy: S0
+2026-05-13 12:14:21,255 | INFO     | main | ============================================================
+2026-05-13 12:14:21,255 | INFO     | src.strategies.imbalance | S0: No balancing applied. Training size: 140,272
+2026-05-13 12:14:21,258 | INFO     | src.models.trainer | Training LogisticRegression on 140,272 samples...
+2026-05-13 12:14:21,259 | INFO     | src.models.trainer | Starting iterative training (max_iter) -> 1000
+2026-05-13 12:14:58,100 | INFO     | src.models.trainer | Training completed in 36.84s
+2026-05-13 12:14:58,294 | INFO     | main | 
+Results (binary_lr_s0_single):
+2026-05-13 12:14:58,295 | INFO     | main | Accuracy:    0.8089
+Macro F1:    0.7949
+Weighted F1: 0.8003
+G-Mean:      0.7905
+ROC-AUC:     0.9559
+2026-05-13 12:14:58,306 | INFO     | main | Saved learning curve CSV: binary_lr_s0_single.csv
+2026-05-13 12:14:58,782 | INFO     | src.evaluation.plots | Saved learning curve plot to results\figures\binary_lr_s0_single\learning_curve.png
+2026-05-13 12:14:59,290 | INFO     | src.evaluation.plots | Saved confusion matrix to results\figures\binary_lr_s0_single\confusion_matrix.png
+2026-05-13 12:14:59,696 | INFO     | src.evaluation.plots | Saved ROC curve to results\figures\binary_lr_s0_single\roc_curve.png
+2026-05-13 12:15:00,159 | INFO     | src.evaluation.plots | Saved PR curve to results\figures\binary_lr_s0_single\pr_curve.png
+2026-05-13 12:15:00,159 | INFO     | main | Completed binary_lr_s0_single in 37.04s
+2026-05-13 12:15:00,160 | INFO     | __main__ | Experiment Completed Successfully.

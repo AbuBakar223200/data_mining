@@ -1,0 +1,82 @@
+# ===================================
+# UNSW-NB15 Experiment Configuration
+# Master Configuration File
+# ===================================
+
+# Data Paths
+data:
+  train_path: "dataset/UNSW_NB15_training-set.csv"
+  test_path: "dataset/UNSW_NB15_testing-set.csv"
+  
+  # Columns to drop (identifiers - 7 columns)
+  # These are non-predictive or cause data leakage
+  drop_columns:
+    - "id"        # Row identifier
+    - "srcip"     # Source IP (Leakage)
+    - "dstip"     # Destination IP (Leakage)
+    - "sport"     # Source Port (Leakage)
+    - "dsport"    # Destination Port (Leakage)
+    - "stime"     # Start Time (Leakage)
+    - "ltime"     # Last Time (Leakage)
+  
+  # Categorical columns for One-Hot Encoding
+  categorical_columns:
+    - "proto"     # Network protocol (~130 unique)
+    - "state"     # Connection state (~15 unique)
+    - "service"   # Application service (~13 unique)
+  
+  # Target columns
+  target_binary: "label"
+  target_multiclass: "attack_cat"
+  
+  # Multiclass label ordering (for consistent encoding)
+  multiclass_labels:
+    - "Normal"
+    - "Analysis"
+    - "Backdoor"
+    - "DoS"
+    - "Exploits"
+    - "Fuzzers"
+    - "Generic"
+    - "Reconnaissance"
+    - "Shellcode"
+    - "Worms"
+
+# Reproducibility
+random_state: 42
+
+# Data Splitting
+validation_size: 0.20  # 20% of training data for validation
+
+# Experiment Grid
+experiments:
+  n_seeds: 1          # Number of random seeds for robustness (User requested 1 seed for now, will update to 5 later)
+  n_jobs: -1          # Maximize local parallelism
+  tasks:
+    - binary
+    - multi
+  models:
+    - lr      # Logistic Regression
+    - rf      # Random Forest
+    - xgb     # XGBoost
+  strategies:
+    - s0      # No balancing (baseline)
+    - s1      # Class weighting
+    - s2a     # RandomOverSampler
+    - s2b     # SMOTE
+
+# Rare Class Analysis
+# Classes with < 3% of training data
+rare_classes:
+  - "Worms"       # 130 samples (0.07%)
+  - "Shellcode"   # 1,133 samples (0.65%)
+  - "Backdoor"    # 1,746 samples (1.00%)
+  - "Analysis"    # 2,000 samples (1.14%)
+
+# Output Paths
+results_dir: "results"
+
+# Logging Configuration
+logging:
+  level: INFO
+  format: "%(asctime)s | %(levelname)s | %(message)s"

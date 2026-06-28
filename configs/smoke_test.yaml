@@ -1,0 +1,63 @@
+# ===================================
+# Smoke Test Configuration
+# Single Seed, Multi Task, RF Model, Strategies S0, S1, S2a, S2b
+# ===================================
+
+# Data Paths (Inherited/Copied from main.yaml structure)
+data:
+  train_path: "dataset/UNSW_NB15_training-set.csv"
+  test_path: "dataset/UNSW_NB15_testing-set.csv"
+  
+  drop_columns:
+    - "id"
+    - "srcip"
+    - "dstip"
+    - "sport"
+    - "dsport"
+    - "stime"
+    - "ltime"
+  
+  categorical_columns:
+    - "proto"
+    - "state"
+    - "service"
+  
+  target_binary: "label"
+  target_multiclass: "attack_cat"
+  
+  multiclass_labels:
+    - "Normal"
+    - "Analysis"
+    - "Backdoor"
+    - "DoS"
+    - "Exploits"
+    - "Fuzzers"
+    - "Generic"
+    - "Reconnaissance"
+    - "Shellcode"
+    - "Worms"
+
+random_state: 42
+validation_size: 0.20
+
+experiments:
+  n_seeds: 1
+  n_jobs: 1
+  tasks:
+    - multi
+  models:
+    - rf
+  strategies:
+    - s0
+
+rare_classes:
+  - "Worms"
+  - "Shellcode"
+  - "Backdoor"
+  - "Analysis"
+
+results_dir: "results/single_seed"
+
+logging:
+  level: INFO
+  format: "%(asctime)s | %(levelname)s | %(message)s"
