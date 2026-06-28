@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Data](https://img.shields.io/badge/dataset-UNSW--NB15-orange)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ihmorol/unsw-nb15-handling-binary-multiclass-ids/blob/main/UNSW_NB15_Full_Grid.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AbuBakar223200/data_mining/blob/main/UNSW_NB15_Full_Grid.ipynb)
 
 > **Baseline for Intrusion Detection Systems (IDS)**
 > A rigorous, reproducible study evaluating the impact of class imbalance strategies (Class Weighting, Random OverSampling, SMOTE) on Binary and Multiclass IDS performance.
@@ -91,7 +91,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ihmorol/unsw-nb15-handling-binary-multiclass-ids.git
+   git clone https://github.com/AbuBakar223200/data_mining.git
    cd ML_PAPER_REVIEW
    ```
 
@@ -122,7 +122,7 @@
 
 The easiest way to run experiments without local setup:
 
-1. Click the **Open in Colab** badge above or visit the [notebook directly](https://colab.research.google.com/github/ihmorol/unsw-nb15-handling-binary-multiclass-ids/blob/main/UNSW_NB15_Full_Grid.ipynb)
+1. Click the **Open in Colab** badge above or visit the [notebook directly](https://colab.research.google.com/github/AbuBakar223200/data_mining/blob/main/UNSW_NB15_Full_Grid.ipynb)
 2. Follow the notebook cells to:
    - Mount Google Drive for result storage
    - Install dependencies automatically
@@ -527,7 +527,7 @@ If you use this codebase in your research, please cite:
   author={Morol, Emon and Contributors},
   year={2024},
   publisher={GitHub},
-  url={https://github.com/ihmorol/unsw-nb15-handling-binary-multiclass-ids}
+  url={https://github.com/AbuBakar223200/data_mining}
 }
 ```
 
@@ -539,8 +539,8 @@ If you use this codebase in your research, please cite:
 
 ### Contact
 
-- **Issues**: [GitHub Issues](https://github.com/ihmorol/unsw-nb15-handling-binary-multiclass-ids/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ihmorol/unsw-nb15-handling-binary-multiclass-ids/discussions)
+- **Issues**: [GitHub Issues](https://github.com/AbuBakar223200/data_mining/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/AbuBakar223200/data_mining/discussions)
 - **Email**: Research inquiries welcome
 
 ---
